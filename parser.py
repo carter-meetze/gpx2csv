@@ -18,18 +18,21 @@ def gpx2csv(gpx_path):
         print('coordinates: done')
     except:
         print('coordinates: failed')
+        pass
 
     try:
         elevation = [x.firstChild.nodeValue for x in xml.getElementsByTagName('ele')]
         print('elevation: done')
     except:
         print('elevation: failed')
+        pass
 
     try:
         speed = [(float(x.firstChild.nodeValue) * 2.23694) for x in xml.getElementsByTagName('speed')]
         print('speed: done')
     except:
         print('speed: failed')
+        pass
 
     try:
         time_raw = [x.firstChild.nodeValue for x in xml.getElementsByTagName('time')]
